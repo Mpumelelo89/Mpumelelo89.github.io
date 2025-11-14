@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nsekie Salon | Premium Hair Braiding</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b5a2b;
+            --secondary-color: #d4af37;
+            --accent-color: #f8e9d1;
+            --dark-color: #3e2723;
+            --light-color: #fff9f0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-brand i {
+            color: var(--secondary-color);
+            margin-right: 8px;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-color) !important;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .style-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .style-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .style-card img {
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .style-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .style-card .card-body {
+            padding: 20px;
+        }
+        
+        .style-card .price {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .accordion-button {
+            background-color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .rating {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .sidebar {
+            background-color: var(--accent-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar h4 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar ul li a {
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        footer h5 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .developer {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom: none;
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .close {
+            color: white;
+            opacity: 1;
+        }
+        
+        /* Page-specific styles */
+        .page-content {
+            min-height: 70vh;
+            padding: 50px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 5px solid var(--accent-color);
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .feature-icon {
+            color: var(--secondary-color);
+        }
+        
+        /* WhatsApp Booking Styles */
+        .btn-success {
+            background-color: #25D366;
+            border-color: #25D366;
+        }
+        
+        .btn-success:hover {
+            background-color: #128C7E;
+            border-color: #128C7E;
+        }
+        
+        .whatsapp-direct, .quick-booking {
+            background-color: var(--accent-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .quick-booking .btn {
+            font-size: 0.9rem;
+            padding: 8px 12px;
+        }
+        
+        /* WhatsApp icon animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .btn-success:hover i {
+            animation: pulse 1s infinite;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section {
+                padding: 100px 0;
+            }
+            
+            .sidebar {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><i class="fas fa-crown"></i> Nsekie Salon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#styles">Styles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>Elevate Your Style With Premium Braids</h1>
+            <p>Experience the art of hair braiding with our expert stylists at Nsekie Salon</p>
+            <a href="#styles" class="btn btn-primary">Explore Styles</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Our Premium Services</h2>
+                    <p class="lead">At Nsekie Salon, we specialize in creating beautiful, protective braided styles that enhance your natural beauty and express your unique personality.</p>
+                    <a href="#about" class="btn btn-primary mt-4">Learn More About Us</a>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-star fa-3x mb-3 feature-icon"></i>
+                    <h4>Premium Quality</h4>
+                    <p>We use only the highest quality hair extensions and products for lasting results.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-users fa-3x mb-3 feature-icon"></i>
+                    <h4>Expert Stylists</h4>
+                    <p>Our team of experienced stylists are trained in the latest braiding techniques.</p>
+                </div>
+                <div class="col-md-4 text-center mb-4">
+                    <i class="fas fa-heart fa-3x mb-3 feature-icon"></i>
+                    <h4>Customer Satisfaction</h4>
+                    <p>Your comfort and satisfaction are our top priorities at Nsekie Salon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Styles Preview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Popular Styles</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card style-card">
+                        <img src="https://images.unsplash.com/photo-1595475888562-8d9f4c5fddbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Box Braids">
+                        <div class="card-body">
+                            <h5 class="card-title">Classic Box Braids</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-1">4.8</span>
+                            </div>
+                            <p class="card-text">Timeless and versatile protective style that never goes out of fashion.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">R 1,500</span>
+                                <a href="#styles" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card style-card">
+                        <img src="https://images.unsplash.com/photo-1610088441521-0077db869229?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Knotless Braids">
+                        <div class="card-body">
+                            <h5 class="card-title">Knotless Braids</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-1">4.9</span>
+                            </div>
+                            <p class="card-text">Modern technique that eliminates tension for a more comfortable wear.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">R 1,800</span>
+                                <a href="#styles" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card style-card">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Goddess Braids">
+                        <div class="card-body">
+                            <h5 class="card-title">Goddess Braids</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-1">4.7</span>
+                            </div>
+                            <p class="card-text">Elegant and intricate style perfect for special occasions.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">R 2,000</span>
+                                <a href="#styles" class="btn btn-sm btn-outline-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#styles" class="btn btn-primary">View All Styles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Nsekie Salon</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded" alt="Salon Interior">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2015, Nsekie Salon has been the premier destination for hair braiding in the community. Our founder, Nsekie M., started with a vision to create a space where traditional braiding techniques meet modern style.</p>
+                    <p>We specialize in a wide variety of braiding styles from classic cornrows to intricate box braids and trendy knotless styles. Our experienced stylists are trained in the latest techniques to ensure your comfort and satisfaction.</p>
+                    <h4>Why Choose Us?</h4>
+                    <ul>
+                        <li>Expert stylists with years of experience</li>
+                        <li>Premium quality hair extensions</li>
+                        <li>Comfortable and hygienic environment</li>
+                        <li>Personalized consultation for each client</li>
+                        <li>Competitive pricing with no hidden costs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Meet Our Team</h2>
+            <div class="row">
+                <div class="col-md-4 team-member">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nsekie M.">
+                    <h4>Nsekie M.</h4>
+                    <p>Founder & Master Stylist</p>
+                    <p>With over 15 years of experience, Nsekie specializes in intricate braiding patterns and traditional techniques.</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="https://images.unsplash.com/photo-1595475888562-8d9f4c5fddbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aisha J.">
+                    <h4>Aisha J.</h4>
+                    <p>Senior Stylist</p>
+                    <p>Aisha is known for her creativity and attention to detail, particularly in goddess and bohemian styles.</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="https://images.unsplash.com/photo-1610088441521-0077db869229?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Chloe K.">
+                    <h4>Chloe K.</h4>
+                    <p>Stylist</p>
+                    <p>Chloe specializes in knotless braids and modern interpretations of classic styles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Styles Section -->
+    <section id="styles" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Braiding Styles</h2>
+            
+            <!-- Sidebar for filtering (visible on larger screens) -->
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sidebar">
+                        <h4>Style Categories</h4>
+                        <ul>
+                            <li><a href="#" data-filter="all">All Styles</a></li>
+                            <li><a href="#" data-filter="box-braids">Box Braids</a></li>
+                            <li><a href="#" data-filter="cornrows">Cornrows</a></li>
+                            <li><a href="#" data-filter="knotless">Knotless Braids</a></li>
+                            <li><a href="#" data-filter="goddess">Goddess Braids</a></li>
+                            <li><a href="#" data-filter="fulani">Fulani Braids</a></li>
+                        </ul>
+                        
+                        <h4 class="mt-4">Price Range</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="priceRange" id="allPrices" checked>
+                            <label class="form-check-label" for="allPrices">
+                                All Prices
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="priceRange" id="under1500">
+                            <label class="form-check-label" for="under1500">
+                                Under R 1,500
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="priceRange" id="1500to2000">
+                            <label class="form-check-label" for="1500to2000">
+                                R 1,500 - R 2,000
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="priceRange" id="over2000">
+                            <label class="form-check-label" for="over2000">
+                                Over R 2,000
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Styles Grid -->
+                <div class="col-lg-9">
+                    <div class="row" id="styles-grid">
+                        <!-- Style cards will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h3>Get In Touch</h3>
+                    <p>We'd love to hear from you. Book an appointment or ask any questions about our services.</p>
+                    
+                    <div class="contact-info">
+                        <h5><i class="fas fa-map-marker-alt"></i> Address</h5>
+                        <p>123 Braid Street, Style District<br>Johannesburg, 2000</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h5><i class="fab fa-whatsapp"></i> WhatsApp</h5>
+                        <p>069 270 2761</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h5><i class="fas fa-phone"></i> Phone</h5>
+                        <p>011 123 4567</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h5><i class="fas fa-envelope"></i> Email</h5>
+                        <p>info@nsekiesalon.com</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h5><i class="fas fa-clock"></i> Hours</h5>
+                        <p>Monday - Friday: 9am - 7pm<br>Saturday: 10am - 6pm<br>Sunday: 11am - 5pm</p>
+                    </div>
+
+                    <div class="whatsapp-direct mt-4">
+                        <h5>Quick Booking via WhatsApp</h5>
+                        <p>Click below to start a conversation directly on WhatsApp:</p>
+                        <a href="https://wa.me/27692702761?text=Hello%20Nsekie%20Salon!%20I%20would%20like%20to%20book%20an%20appointment." 
+                           class="btn btn-success" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select class="form-select" id="service">
+                                <option value="">Select a service</option>
+                                <option value="box-braids">Box Braids (R 1,500-1,800)</option>
+                                <option value="cornrows">Cornrows (R 1,200)</option>
+                                <option value="knotless">Knotless Braids (R 1,800)</option>
+                                <option value="goddess">Goddess Braids (R 2,000)</option>
+                                <option value="fulani">Fulani Braids (R 1,700)</option>
+                                <option value="consultation">Consultation (Free)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Tell us about your hair type, preferred style, and any specific requirements..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="bookFromContactForm()">
+                            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                        </button>
+                        <button type="submit" class="btn btn-outline-primary ms-2">Send Message</button>
+                    </form>
+
+                    <!-- Quick Style Booking -->
+                    <div class="quick-booking mt-5">
+                        <h5>Quick Style Booking</h5>
+                        <p>Book these popular styles directly:</p>
+                        <div class="row">
+                            <div class="col-6 mb-2">
+                                <button class="btn btn-outline-primary w-100" onclick="sendToWhatsApp('Classic Box Braids', '1,500')">
+                                    Box Braids
+                                </button>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <button class="btn btn-outline-primary w-100" onclick="sendToWhatsApp('Knotless Braids', '1,800')">
+                                    Knotless Braids
+                                </button>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <button class="btn btn-outline-primary w-100" onclick="sendToWhatsApp('Goddess Braids', '2,000')">
+                                    Goddess Braids
+                                </button>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <button class="btn btn-outline-primary w-100" onclick="sendToWhatsApp('Cornrows', '1,200')">
+                                    Cornrows
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-crown me-2"></i> Nsekie Salon</h5>
+                    <p>Your premier destination for exquisite hair braiding. We blend traditional techniques with contemporary styles to create looks that empower and inspire.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#styles">Styles</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#styles">Box Braids</a></li>
+                        <li><a href="#styles">Cornrows</a></li>
+                        <li><a href="#styles">Knotless Braids</a></li>
+                        <li><a href="#styles">Goddess Braids</a></li>
+                        <li><a href="#styles">Fulani Braids</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get updates on new styles and special offers.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-outline-light" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Nsekie Salon. All Rights Reserved.</p>
+                <p class="developer">Developed by Shivambu Shaun</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Style Detail Modal -->
+    <div class="modal fade" id="styleModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="styleModalTitle">Style Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modalImage" src="" class="img-fluid rounded" alt="Style Image">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modalStyleName"></h4>
+                            <div class="rating mb-2" id="modalRating"></div>
+                            <p id="modalDescription"></p>
+                            <p><strong>Duration:</strong> <span id="modalDuration"></span></p>
+                            <p><strong>Price:</strong> <span id="modalPrice" class="price"></span></p>
+                            <p><strong>Maintenance:</strong> <span id="modalMaintenance"></span></p>
+                            <p><strong>Best For:</strong> <span id="modalBestFor"></span></p>
+                            <button class="btn btn-primary mt-3" onclick="bookAppointment()">
+                                <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                            </button>
+                            <p class="text-muted small mt-2">You'll be redirected to WhatsApp to confirm your booking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for easier DOM manipulation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+        // Style data with Rand prices
+        const styles = [
+            {
+                id: 1,
+                name: "Classic Box Braids",
+                category: "box-braids",
+                price: 1500,
+                image: "https://images.unsplash.com/photo-1595475888562-8d9f4c5fddbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Timeless and versatile, classic box braids are a protective style that never goes out of fashion. These braids are created by sectioning the hair into square or rectangular parts and braiding synthetic or natural hair extensions from the roots to the ends.",
+                duration: "3-5 hours",
+                maintenance: "4-6 weeks",
+                bestFor: "All hair types, especially those looking for long-lasting protective styling",
+                rating: 4.8
+            },
+            {
+                id: 2,
+                name: "Knotless Box Braids",
+                category: "knotless",
+                price: 1800,
+                image: "https://images.unsplash.com/photo-1610088441521-0077db869229?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "A modern take on traditional box braids, knotless braids start with your natural hair and gradually incorporate the extension hair. This technique eliminates the bulky knot at the base, creating a more natural look and reducing tension on the scalp.",
+                duration: "4-6 hours",
+                maintenance: "6-8 weeks",
+                bestFor: "Those with sensitive scalps or anyone wanting a more natural-looking install",
+                rating: 4.9
+            },
+            {
+                id: 3,
+                name: "Goddess Braids",
+                category: "goddess",
+                price: 2000,
+                image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Elegant and intricate, goddess braids combine cornrows with flowing curls or textured hair. This style creates a regal, bohemian look that's perfect for special occasions or making a fashion statement.",
+                duration: "5-7 hours",
+                maintenance: "4-6 weeks",
+                bestFor: "Special events, fashion-forward individuals",
+                rating: 4.7
+            },
+            {
+                id: 4,
+                name: "Fulani Braids",
+                category: "fulani",
+                price: 1700,
+                image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Inspired by the Fulani people of West Africa, this style features a central cornrow or part with braids cascading to the sides. Often accessorized with beads and metallic cuffs, it's a culturally rich and beautiful style.",
+                duration: "4-5 hours",
+                maintenance: "4-6 weeks",
+                bestFor: "Those wanting a culturally significant style with decorative elements",
+                rating: 4.6
+            },
+            {
+                id: 5,
+                name: "Cornrows",
+                category: "cornrows",
+                price: 1200,
+                image: "https://images.unsplash.com/photo-1593705114312-a0ee03a3f7d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "A traditional African braiding technique where the hair is braided very close to the scalp in underhand, continuous rows. Cornrows can be styled in various patterns and are the foundation for many other braided styles.",
+                duration: "2-4 hours",
+                maintenance: "2-4 weeks",
+                bestFor: "Active lifestyles, quick protective styling",
+                rating: 4.5
+            },
+            {
+                id: 6,
+                name: "Jumbo Box Braids",
+                category: "box-braids",
+                price: 1300,
+                image: "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                description: "Larger versions of traditional box braids that create a bold, statement look. Jumbo braids are quicker to install and lighter on the head while still offering the protective benefits of smaller braids.",
+                duration: "2-3 hours",
+                maintenance: "4-6 weeks",
+                bestFor: "Those wanting a dramatic look with less installation time",
+                rating: 4.4
+            }
+        ];
+
+        // Function to generate star ratings
+        function generateStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="fas fa-star"></i>';
+            }
+            
+            if (hasHalfStar) {
+                stars += '<i class="fas fa-star-half-alt"></i>';
+            }
+            
+            const emptyStars = 5 - Math.ceil(rating);
+            for (let i = 0; i < emptyStars; i++) {
+                stars += '<i class="far fa-star"></i>';
+            }
+            
+            return stars;
+        }
+
+        // Function to render styles
+        function renderStyles(stylesToRender) {
+            const stylesGrid = document.getElementById('styles-grid');
+            if (!stylesGrid) return;
+            
+            stylesGrid.innerHTML = '';
+            
+            stylesToRender.forEach(style => {
+                const styleCard = `
+                    <div class="col-md-6 col-lg-4 fade-in" data-category="${style.category}">
+                        <div class="card style-card">
+                            <img src="${style.image}" class="card-img-top" alt="${style.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${style.name}</h5>
+                                <div class="rating">
+                                    ${generateStars(style.rating)}
+                                    <span class="ms-1">${style.rating}</span>
+                                </div>
+                                <p class="card-text">${style.description.substring(0, 100)}...</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">R ${style.price.toLocaleString()}</span>
+                                    <button class="btn btn-sm btn-outline-primary" onclick="openStyleModal(${style.id})">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                stylesGrid.innerHTML += styleCard;
+            });
+            
+            // Trigger fade-in animation
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        }
+
+        // Function to open style modal
+        function openStyleModal(styleId) {
+            const style = styles.find(s => s.id === styleId);
+            if (style) {
+                document.getElementById('styleModalTitle').textContent = style.name;
+                document.getElementById('modalImage').src = style.image;
+                document.getElementById('modalStyleName').textContent = style.name;
+                document.getElementById('modalRating').innerHTML = generateStars(style.rating) + ` <span class="ms-1">${style.rating}</span>`;
+                document.getElementById('modalDescription').textContent = style.description;
+                document.getElementById('modalDuration').textContent = style.duration;
+                document.getElementById('modalPrice').textContent = R ${style.price.toLocaleString()};
+                document.getElementById('modalMaintenance').textContent = style.maintenance;
+                document.getElementById('modalBestFor').textContent = style.bestFor;
+                
+                const modal = new bootstrap.Modal(document.getElementById('styleModal'));
+                modal.show();
+            }
+        }
+
+        // Function to send booking to WhatsApp
+        function sendToWhatsApp(styleName, price) {
+            const name = document.getElementById('name') ? document.getElementById('name').value : '';
+            const email = document.getElementById('email') ? document.getElementById('email').value : '';
+            const phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+            const message = document.getElementById('message') ? document.getElementById('message').value : '';
+            
+            // Create WhatsApp message
+            let whatsappMessage = Hello Nsekie Salon! I would like to book an appointment.%0A%0A;
+            
+            if (styleName) {
+                whatsappMessage += *Style I'm interested in:* ${styleName}%0A;
+                whatsappMessage += *Price:* R ${price}%0A;
+            }
+            
+            if (name) whatsappMessage += *Name:* ${name}%0A;
+            if (email) whatsappMessage += *Email:* ${email}%0A;
+            if (phone) whatsappMessage += *Phone:* ${phone}%0A;
+            if (message) whatsappMessage += *Message:* ${message}%0A;
+            
+            whatsappMessage += %0AI would like to confirm my booking. Please let me know available dates and times.;
+            
+            // Create WhatsApp URL
+            const whatsappURL = https://wa.me/27692702761?text=${whatsappMessage};
+            
+            // Open WhatsApp in new tab
+            window.open(whatsappURL, '_blank');
+            
+            // Show confirmation
+            alert('Opening WhatsApp to complete your booking. Please send the pre-filled message to confirm your appointment.');
+        }
+
+        // Updated bookAppointment function
+        function bookAppointment() {
+            const styleName = document.getElementById('modalStyleName').textContent;
+            const price = document.getElementById('modalPrice').textContent.replace('R ', '').replace(',', '');
+            
+            // Close the modal first
+            const modal = bootstrap.Modal.getInstance(document.getElementById('styleModal'));
+            modal.hide();
+            
+            sendToWhatsApp(styleName, price);
+        }
+
+        // Function to handle direct booking from contact form
+        function bookFromContactForm() {
+            const styleSelect = document.getElementById('service');
+            const selectedStyle = styleSelect.options[styleSelect.selectedIndex].text;
+            
+            // Get prices for different styles
+            const stylePrices = {
+                'Box Braids (R 1,500-1,800)': '1,500-1,800',
+                'Cornrows (R 1,200)': '1,200',
+                'Knotless Braids (R 1,800)': '1,800',
+                'Goddess Braids (R 2,000)': '2,000',
+                'Fulani Braids (R 1,700)': '1,700',
+                'Consultation (Free)': '0'
+            };
+            
+            const price = stylePrices[selectedStyle] || 'Please inquire';
+            const styleName = selectedStyle.split(' (')[0]; // Remove price from style name
+            
+            sendToWhatsApp(styleName, price);
+        }
+
+        // Filter styles by category
+        function filterStyles(category) {
+            if (category === 'all') {
+                renderStyles(styles);
+            } else {
+                const filteredStyles = styles.filter(style => style.category === category);
+                renderStyles(filteredStyles);
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render all styles initially
+            renderStyles(styles);
+            
+            // Add event listeners for filter links
+            document.querySelectorAll('[data-filter]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const category = this.getAttribute('data-filter');
+                    filterStyles(category);
+                });
+            });
+            
+            // Add event listener for contact form
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+            
+            // Add scroll animation
+            window.addEventListener('scroll', function() {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('visible');
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function() {
+                let current = '';
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === #${current}) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
